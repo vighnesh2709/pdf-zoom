@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Embed PDF using iframe</title>
+</head>
+<body>
+  <div id="pdf">
+    <iframe id="main-pdf" src="Vighnesh_resume_3.pdf" width="100%" height="700px"></iframe>
+  </div>
+  <div>
+    <button id="zoomIn" onclick="zoomIn()" style="position: absolute;">ZOOM IN</button>
+  <button id="zoomOut" onclick="zoomOut()" style="position: absolute; right: 10px;">ZOOM OUT</button>
+  </div>
+    
+  
+</body>
+<script>
+  let iframe = document.getElementById("main-pdf");  
+  let scale = 1.0;
+
+  function zoomIn() {
+    scale += 0.1;
+    iframe.style.transform = `scale(${scale})`; 
+  }
+
+  function zoomOut() {
+    if (scale > 1) {
+      scale -= 0.1;
+      iframe.style.transform = `scale(${scale})`;
+    }
+  }
+</script>
+</html>
